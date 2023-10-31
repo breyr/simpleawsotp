@@ -1,0 +1,22 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DynamoDBStreamAccess",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:GetShardIterator",
+        "dynamodb:DescribeStream",
+        "dynamodb:GetRecords",
+        "dynamodb:ListStreams"
+      ],
+      "Resource": "arn:aws:dynamodb:<region>:<aws-account-id>:table/EmailVerification/stream/*"
+    },
+    {
+      "Sid": "DynamoListStreams",
+      "Effect": "Allow",
+      "Action": "dynamodb:ListStreams",
+      "Resource": "*"
+    }
+  ]
+}
